@@ -402,6 +402,37 @@ _VEHICLE_ENDPOINTS: dict[str, dict[str, EndpointDefinition | None]] = {
         "res-state": None,  # default => 404
         "soc-levels": None,  # Reason: "The access is forbidden"
     },
+    "X442BI": {  # TWINGO II
+        "actions/charge-set-mode": None,
+        "actions/charge-set-schedule": None,
+        "actions/charge-start": None,
+        "actions/charge-stop": None,  # Not supported - use charger to stop
+        "actions/horn-start": None,  # Reason: err.func.wired.forbidden
+        "actions/hvac-set-schedule": None,
+        "actions/hvac-start": None,
+        "actions/hvac-stop": None,  # Not supported
+        "actions/lights-start": None,  # Reason: err.func.wired.forbidden
+        "actions/refresh-location": _DEFAULT_ENDPOINTS["actions/refresh-location"],
+        "alerts": None,  # Reason: "err.func.wired.not-found"
+        "battery-status": None,
+        "charge-history": None,  # Reason: "err.func.wired.not-found"
+        "charge-mode": None,  # Reason: "err.func.vcps.ev.charge-mode.error"
+        "charge-schedule": None,  # Reason: "err.func.vcps.ev.charge-schedule.error"
+        "charges": None,
+        "charging-settings": None,
+        "cockpit": None,
+        "hvac-history": None,  # Reason: "err.func.wired.not-found"
+        "hvac-sessions": None,  # Reason: "err.func.wired.not-found"
+        "hvac-settings": _DEFAULT_ENDPOINTS["hvac-settings"],
+        "hvac-status": _DEFAULT_ENDPOINTS["hvac-status"],
+        "location": _DEFAULT_ENDPOINTS["location"],
+        "lock-status": None,  # Reason: "err.func.wired.notFound"
+        "notification-settings": None,  # Reason: "err.func.vcps.users-helper.get-notification-settings.error"  # noqa: E501
+        "pressure": None,  # Reason: "err.func.wired.notFound"
+        "res-state": None,  # Reason: "err.func.wired.notFound"
+        "soc-levels": None,  # Reason: "err.func.wired.forbidden"
+    },
+    
     "XBG1VE": {  # DACIA SPRING
         "actions/charge-start": _KCM_ENDPOINTS["actions/charge-start-via-pause-resume"],
         "actions/charge-stop": _KCM_ENDPOINTS["actions/charge-stop-via-pause-resume"],
